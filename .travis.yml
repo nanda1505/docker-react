@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t nanda1505/docker-react -f Dockerfile.dev .
+
+scripts:
+  - docker run -e CI=true nanda1505/docket-react npm run test
